@@ -1,0 +1,58 @@
+body {
+  background-color: #211E31;
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  padding-top: 5%;
+}
+
+h1 {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+}
+.padre {
+  /*background: yellow;*/
+  /*height: 150px;*/
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#prueba{
+  margin: 30px;
+  box-shadow: 0 0px 10px 0px black;
+  text-align: center;
+  transition: all 0.25s;
+  border-radius: 10px;
+}
+
+.hijo {
+  padding: 0% 1% 1% 1%;
+  background: whitesmoke;
+  /*width: 400px;*/
+}
+
+.divButton {
+  /*margin: 10px 10px 10px 10px;*/
+  margin: 0px 0px 0px 0px;
+  margin-top: 10px;
+}
+button{
+  padding: 10px 10px;
+  font-size: 1pc;
+  cursor: pointer;
+  border-style: none;
+  background: #52BE96;
+  box-shadow: none;
+  border-radius: 5%;
+}
+button:hover{
+  box-shadow: 0.2pc  0.2pc  0.2pc  0.2pc #47a581;
+  padding: 15px 15px;
+}
+canvas {
+  text-align: center;
+  justify-content: center;
+}

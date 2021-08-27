@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>LABORATORIO #1</title>
+</head>
+<body>
+    <h1>Monitoreo de los servidores</h1>
+    <div class="padre">
+        <div class="hijo" id="prueba">
+            <h2>Server 1</h2>
+            <!--
+            <button style="background-color: green;">Server #1</button>
+            -->
+            <canvas id="server1" height="20"></canvas>
+            <div class="divButton">
+                <button>Reiniciar Server 1</button>
+            </div>
+        </div>
+    </div>
+    <div class="padre">
+        <div class="hijo" id="prueba">
+            <h2>Server 2</h2>
+            <!--<canvas id="server2" width="1000" height="100"></canvas>-->
+            <canvas id="server2" height="20"></canvas>
+            <div class="divButton">
+                <button>Reiniciar Server 2</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/cuadros.js"></script>
+</body>
+</html>
