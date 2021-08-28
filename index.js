@@ -1,5 +1,6 @@
 const express = require("express");
 const readLastLines = require('read-last-lines');
+const exec = require('child_process').exec;
 const fs = require('fs').promises;
 const port = 4000;
 const app = express();
