@@ -27,29 +27,32 @@ setInterval(()=>{
 	});
 	readLastLines.read('log.txt', 5).then((lines) => {
 		let data = lines.split('\n');
-		if(data[0].includes('TIME'))
-			for (var i = 0; i < data.length; i++) {
-				if(data[i] == 'ServerA'){
-					if(data[i + 1] === '')
-						serverAStatus = 'FAIL';
-					else
-						serverAStatus = 'OK';
-					i++;
-				}else if(data[i] == 'ServerB'){
-					if(data[i + 1] === '')
-						serverBStatus = 'FAIL';
-					else
-						serverBStatus = 'OK';
-					i++;
-				}else if (data[i].includes('TIME') ){
-					time = data[i];
-				}else{
-					i++;
-				}
+		for (var i = 0; i < data.length; i++) {
+			if(data[i] == 'ServerA'){
+				if(data[i + 1] === '')
+					serverAStatus = 'FAIL';
+				else
+					serverAStatus = 'OK';
+				i++;
+			}else if(data[i] == 'ServerB'){
+				if(data[i + 1] === '')
+					serverBStatus = 'FAIL';
+				else
+					serverBStatus = 'OK';
+				i++;
+			}else if (data[i].includes('TIME') ){
+				time = data[i];
+			}else{
+				i++;
 			}
+		}
+		
 	});
+	console.log("A "+serverAStatus);
+	console.log("B "+serverBStatus);
 	updateStates(serverAStatus, serverBStatus);
 },1000);
+
 function updateStates(aState, bState){
 	if(typeof aState === 'string' && typeof bState === 'string'){
 		const state = {
