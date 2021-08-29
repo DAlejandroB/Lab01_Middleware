@@ -48,10 +48,6 @@ button{
   box-shadow: none;
   border-radius: 5%;
 }
-button:hover{
-  box-shadow: 0.2pc  0.2pc  0.2pc  0.2pc #47a581;
-  padding: 15px 15px;
-}
 canvas {
   text-align: center;
   justify-content: center;
