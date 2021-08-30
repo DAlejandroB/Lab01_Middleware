@@ -4,6 +4,9 @@ var url = "localhost:4000/server"
 document.getElementById("resetS1btn").addEventListener("click", function(){
     sendData({ data : "button1"})
 });
+document.getElementById("resetS2btn").addEventListener("click", function(){
+    sendData({ data : "button2"})
+});
 function sendData(data) {
     const options = {
         method: 'POST',
@@ -41,7 +44,7 @@ function loadElements(data){
                         document.getElementById(`resetS${x}btn`).style.background = 'gray';
                     }
                     else{
-                        document.getElementById(`resetS${x}btn`).disabled = true;
+                        document.getElementById(`resetS${x}btn`).disabled = false;
                         document.getElementById(`resetS${x}btn`).style.background = "#52BE96";
                     }
                 } else if(x == 2){
@@ -51,7 +54,7 @@ function loadElements(data){
                         document.getElementById(`resetS${x}btn`).style.background = 'gray';
                     }
                     else{
-                        document.getElementById(`resetS${x}btn`).disabled = true;
+                        document.getElementById(`resetS${x}btn`).disabled = false;
                         document.getElementById(`resetS${x}btn`).style.background = "#52BE96";
                     }
                 }
