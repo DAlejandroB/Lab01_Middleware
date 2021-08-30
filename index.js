@@ -5,7 +5,6 @@ const fs = require('fs').promises;
 const cors = require('cors');
 const port = 4000;
 const app = express();
-const shell = require('shelljs');
 
 app.use(express.json());
 app.use(cors());
@@ -72,6 +71,10 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) =>{
 	var message = req.body.data;
 	var server = message.charAt(message.length-1);
-	shell.exec(`./docker.sh instance${server} instance 300${server-1} 4000 `);
+	exec(`sh docker.sh ${"instance"+server} ${"instance"} ${300+server} ${3000} `, (error, stout, stderr) => {
+		if (error !== null) {
+			console.log(`exec error: ${error}`);
+		}
+	});
 	res.send("Server reseted succesfully")
 });
