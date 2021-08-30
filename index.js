@@ -66,7 +66,13 @@ function updateStates(aState, bState){
 	}
 	fs.writeFile('./public/state.json', JSON.stringify(states));
 }
-
+function serverrest(nameImagene, namecontainer){
+	exec(`sh docker.sh ${nameImagene} ${namecontainer}`, (error, stout, stderr) => {
+		if (error !== null) {
+			console.log(`exec error: ${error}`);
+		}
+	});
+};
 app.get("/", (req, res) => {
 	res.sendFile(__dirname + '/public/html/index.html');
 });
